@@ -1,0 +1,18 @@
+﻿@Html.DropDownList("id_selection",
+new SelectList(new List<object>
+{
+    new { value = 0, text = "All" },
+    new { value = 1, text = "Make" },
+    new { value = 2, text = "Model" },
+    new { value = 3, text = "Year" },
+    new { value = 4, text = "Doors" },
+    new { value = 5, text = "Colour" },
+    new { value = 6, text = "Price" }
+}, "value", "text"),
+new { @id = "id_selection", @class = "search_option" })
+<div class="space">
+	<input id="id_query" type="text" size="27" />
+	<span id="id_find" class="hover ui-corner-all ui-state-default">
+		<span>Find</span>
+	</span>
+</div>

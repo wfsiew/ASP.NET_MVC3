@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cars</title>
+    <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/style.css")" />
+</head>
+<body>
+    <h1>Cars</h1>
+
+    <p>
+        You have deleted a car with id @ViewData["id"] at @DateTime.Now.ToLongDateString()
+    </p>
+    <p>
+        Return to @Html.ActionLink("Main List", "Cars")
+    </p>
+</body>
+</html>

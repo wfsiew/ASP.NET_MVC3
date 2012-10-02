@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car CRUD using jQuery</title>
+    <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/style.css")" />
+    <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/themes/ui-darkness/jquery-ui-1.8.21.custom.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.21.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/ejs.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/utils.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/nav_list.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/car.js")"></script>
+</head>
+<body>
+    <h1>Car CRUD using jQuery</h1>
+    <div id="table_container">
+        <div class="page_title ui-widget-header ui-widget">Cars</div>
+        <table class="page_container">
+            <tbody>
+                <tr>
+                    <td valign="top">
+                        <div id="id_add" class="hover ui-state-default ui-corner-all">
+						    <span>Add new car ...</span>
+					    </div>
+                    </td>
+                    <td valign="top">
+                        @{
+                            Html.RenderPartial("search_form");
+                        }
+                    </td>
+                    <td valign="top">
+                        @{
+                            Html.RenderPartial("navigate_form");
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="page_container">
+            <tr>
+                <td id="left_box" valign="top" style="display: none"></td>
+                <td id="right_box" valign="top">
+                    @{
+                        Html.RenderPartial("carlist");
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="dialog-message" title="Add Car">
+		<div id="dialog_msg"></div>
+	</div>
+	<div id="error-dialog" title="Internal Server Error">
+		<div id="error_dialog"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@model mvcweb.Models.Car
+           
+@{
+    Layout = null;
+}
+           
+<div class="form_title ui-widget-header ui-widget ui-corner-all">
+	<div class="title">@ViewData["formTitle"]</div>
+	<div class="close hover ui-corner-all ui-state-default">
+		<div class="ui-icon ui-icon-closethick"></div>
+	</div>
+</div>
+<div class="ui-widget-content ui-widget ui-corner-all">
+    <form id="save-form" action="." method="post">
+        <div class="row">
+            @Html.LabelFor(model => model.Make)
+            @Html.TextBoxFor(model => model.Make, new { @id = "id_make", @class = "text" })
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Model)
+            @Html.TextBoxFor(model => model.Model, new { @id = "id_model", @class = "text" })
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Year)
+            @Html.TextBoxFor(model => model.Year, new { @id = "id_year", @class = "text" })
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Doors)
+            @Html.DropDownListFor(model => model.Doors,
+                new SelectList(new List<object>
+                {
+                    new { value = 2, text = "2" },
+                    new { value = 3, text = "3" },
+                    new { value = 4, text = "4" },
+                    new { value = 5, text = "5" }
+                }, "value", "text"),
+                new { @id = "id_doors", @class = "select" })
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Colour)
+            @Html.TextBoxFor(model => model.Colour, new { @id = "id_colour", @class = "text" })
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Price)
+            @Html.TextBoxFor(model => model.Price, new { @id = "id_price", @class = "text" })
+        </div>
+        <div class="row_button">
+            <span class="save_button save hover ui-corner-all ui-state-default">
+                <span>Save</span>
+            </span>
+            <span class="save_button cancel hover ui-corner-all ui-state-default">
+                <span>Cancel</span>
+            </span>
+        </div>
+    </form>
+</div>

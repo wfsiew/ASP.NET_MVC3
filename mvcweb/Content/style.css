@@ -1,0 +1,182 @@
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 1.5em;
+	font: 8pt Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+	margin: 5px;
+}
+
+.demo_table {
+	border: 1px solid;
+	border-collapse: collapse;
+}
+
+.demo_table th,.demo_table td {
+	border: 1px solid;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+div.row {
+	clear: both;
+	padding-top: 5px;
+	margin-left: 5px;
+}
+
+div.row label {
+	float: left;
+	text-align: right;
+	margin-top: 5px;
+	margin-right: 5px;
+	width: 120px;
+}
+
+div.row_button_info {
+	clear: both;
+	margin-left: 130px;
+	margin-right: 10px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+div.row_button {
+	clear: both;
+	text-align: right;
+	margin-right: 10px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.text {
+	width: 158px;
+}
+
+.select {
+	width: 160px;
+	font-size: 1em;
+}
+
+.search_option {
+	width: 220px;
+	font-size: 1em;
+}
+
+.display_options {
+	width: 50px;
+	font-size: 1em;
+}
+
+.list_row {
+	border: 1px solid !important;
+}
+
+#table_container {
+	width: 790px;
+	border: 1px solid;
+}
+
+.page_title {
+	height: 24px;
+	font-size: 1.1em;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-top: 6px;
+}
+
+.page_container {
+	width: 100%;
+	font-size: 1em !important;
+}
+
+div.form_title {
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	height: 21px;
+}
+
+.form_title .title {
+	float: left;
+}
+
+.form_title .close {
+	float: right;
+	margin-right: 5px;
+}
+
+.hover {
+	cursor: pointer;
+}
+
+.list_table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.nav_table {
+	font-size: 1em !important;
+	float: right;
+	border-collapse: collapse;
+}
+
+.nav_table td {
+	text-align: right;
+}
+
+#id_add,#id_find,.page_button {
+	font-size: 1.1em;
+	white-space: nowrap;
+}
+
+#id_add {
+	float: left;
+	width: 200px;
+	text-align: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#id_find {
+	padding-left: 3px;
+	padding-right: 17px;
+}
+
+.page_button {
+	padding: 0 50px 0 50px;
+}
+
+.list_button {
+	margin-top: 2px;
+}
+
+.save_button.save,.save_button.cancel {
+	font-size: 1em;
+	padding: 2px 8px 2px 8px;
+	display: inline-block;
+}
+
+.save_button.save,.save_button.ok {
+	margin-right: 5px;
+}
+
+.form_error {
+	color: #D8000C;
+	background-color: #FFBABA;
+}
+
+input[type='text'],input[type='password'] {
+	border: 1px solid #ccc;
+}
+
+input[type='text']:HOVER,input[type='password']:HOVER {
+	border: 1px solid #000;
+}
+
+input[type='text']:FOCUS {
+	background-color: #ffc;
+}
+
+textarea:FOCUS {
+	background-color: #ffc;
+}

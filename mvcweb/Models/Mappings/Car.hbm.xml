@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="mvcweb"
+                   namespace="mvcweb.Models">
+    
+    <class name="Car">
+        <id name="ID">
+            <generator class="identity" />
+        </id>
+        <property name="Make" type="string" />
+        <property name="Model" type="string" />
+        <property name="Year" type="int" />
+        <property name="Doors" type="int" />
+        <property name="Colour" type="string" />
+        <property name="Price" type="double" />
+    </class>
+    
+</hibernate-mapping>

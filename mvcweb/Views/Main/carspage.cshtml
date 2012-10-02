@@ -1,0 +1,52 @@
+﻿@using System.Collections
+@using System.Collections.Generic
+@using mvcweb.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cars Page</title>
+    <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/style.css")" />
+</head>
+<body>
+    <h1>Cars</h1>
+
+    @{
+        Dictionary<string, object> dic = ViewData["data"] as Dictionary<string, object>;
+        IList<Car> cars = dic["list"] as IList<Car>;
+    }
+    <p>@dic["item_msg"]</p>
+    <table style="border: 1px solid; width: 500px; text-align: center">
+        <thead style="background: #fcf">
+			<tr>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Year</th>
+				<th>Doors</th>
+				<th>Colour</th>
+				<th>Price</th>
+				<th colspan="3"></th>
+			</tr>
+		</thead>
+        <tbody>
+        @foreach (Car car in cars)
+        {
+            <tr>
+                <td>@car.Make</td>
+                <td>@car.Model</td>
+                <td>@car.Year</td>
+                <td>@car.Doors</td>
+                <td>@car.Colour</td>
+                <td>@car.Price</td>
+                <td><a href="/main/cars/edit/@car.ID">Edit</a></td>
+                <td><a href="/main/cars/delete/@car.ID">Delete</a></td>
+                <td><a href="/main/cars/add">Add</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</body>
+</html>

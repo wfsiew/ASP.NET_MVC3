@@ -1,0 +1,76 @@
+﻿@model mvcweb.Models.Car
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New Car</title>
+    <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/Site.css")" />
+    <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/style.css")" />
+</head>
+<body>
+    <script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    <h1>Create New Car</h1>
+    
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Car</legend>
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Make)</td>
+                    <td>@Html.TextBoxFor(model => model.Make, new { @class = "text" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Make)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Model)</td>
+                    <td>@Html.TextBoxFor(model => model.Model, new { @class = "text" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Model)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Year)</td>
+                    <td>@Html.TextBoxFor(model => model.Year, new { @class = "text" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Year)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Doors)</td>
+                    <td>
+                        @Html.DropDownListFor(model => model.Doors,
+                            new SelectList(new List<object>
+                            {
+                                new { value = 2, text = "2" },
+                                new { value = 3, text = "3" },
+                                new { value = 4, text = "4" },
+                                new { value = 5, text = "5" }
+                            }, "value", "text"),
+                            new { @class = "select" })
+                    </td>
+                    <td>@Html.ValidationMessageFor(model => model.Doors)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Colour)</td>
+                    <td>@Html.TextBoxFor(model => model.Colour, new { @class = "text" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Colour)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Price)</td>
+                    <td>@Html.TextBoxFor(model => model.Price, new { @class = "text" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.Price)</td>
+                </tr>
+            </table>
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Cars")
+    </div>
+</body>
+</html>

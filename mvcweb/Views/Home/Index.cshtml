@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+    <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/style.css")" />
+</head>
+<body>
+    <div id="tabs">
+        <ul>
+            <li>@Html.ActionLink("Main Car CRUD Operation", "Cars", "Main")</li>
+            <li>@Html.ActionLink("Main Car CRUD Operation with jQuery Ajax", "CarsPage", "MainAjax")</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@using mvcweb.Models
+
+@{
+    Layout = null;
+}
+
+@{
+    Dictionary<string, object> dic = ViewData["data"] as Dictionary<string, object>;
+    IList<Car> cars = dic["list"] as IList<Car>;
+}
+<table class="list_table">
+    <tbody>
+    @for (int i = 0; i < cars.Count; i++)
+    {
+        string rowCss = "ui-state-default";
+        if (i % 2 == 0)
+        {
+            rowCss = "ui-state-active";
+        }
+
+        Car car = cars[i];
+        
+        <tr class="@rowCss list_row">
+            <td id="@car.ID" width="60px">
+                <div class="list_button edit hover ui-corner-all ui-state-default">
+                    <span>Edit</span>
+                </div>
+                <div class="list_button delete hover ui-corner-all ui-state-default">
+                    <span>Delete</span>
+                </div>
+            </td>
+            <td valign="top">
+                <div>@car.Make @car.Model (Year @car.Year) @car.Doors Doors @car.Colour</div>
+                <div>RM @string.Format("{0:0.##}", car.Price)</div>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<input id="id_pg" type="hidden" value="@dic["hasprev"],@dic["hasnext"],@dic["prevpage"],@dic["nextpage"],@dic["item_msg"]" />
