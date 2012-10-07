@@ -1,0 +1,13 @@
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\hibernate.cfg.xml
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\mvcwebtest.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\mvcwebtest.pdb
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\FizzWare.NBuilder.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\Iesi.Collections.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\mvcweb.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\NHibernate.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\xunit.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\Ninject.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\mvcweb.pdb
+F:\vs_Projects\mvcweb\mvcwebtest\obj\Release\mvcwebtest.csprojResolveAssemblyReference.cache
+F:\vs_Projects\mvcweb\mvcwebtest\obj\Release\mvcwebtest.dll
+F:\vs_Projects\mvcweb\mvcwebtest\obj\Release\mvcwebtest.pdb

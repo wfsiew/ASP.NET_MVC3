@@ -1,6 +1,6 @@
 F:\vs_Projects\mvcweb\mvcweb\bin\hibernate.cfg.xml
 F:\vs_Projects\mvcweb\mvcweb\bin\mvcweb.dll
 F:\vs_Projects\mvcweb\mvcweb\bin\mvcweb.pdb
-F:\vs_Projects\mvcweb\mvcweb\obj\Release\ResolveAssemblyReference.cache
 F:\vs_Projects\mvcweb\mvcweb\obj\Release\mvcweb.dll
 F:\vs_Projects\mvcweb\mvcweb\obj\Release\mvcweb.pdb
+F:\vs_Projects\mvcweb\mvcweb\obj\Release\mvcweb.csprojResolveAssemblyReference.cache
