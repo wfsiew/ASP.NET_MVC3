@@ -5,7 +5,7 @@
         <property name="dialect">NHibernate.Dialect.MySQLDialect</property>
         <property name="connection.driver_class">NHibernate.Driver.MySqlDataDriver</property>
         <!--<property name="connection.connection_string">Server=localhost;Port=3307;Database=devdb;Uid=root;Pwd=root;</property>-->
-		<property name="connection.connection_string">server=8270bb15-56d3-47c8-9ef8-a0e3007687cd.mysql.sequelizer.com;database=db8270bb1556d347c89ef8a0e3007687cd;uid=wdiwtcozisthkiwp;pwd=HB6j7L7kZuf4sBvr7vpP3WkUbVLEVfVKnHkvsC3pjiby7MK2uCrdenQUqjij8zxU</property>
+		<property name="connection.connection_string">server=8270bb15-56d3-47c8-9ef8-a0e3007687cd.mysql.sequelizer.com;database=db8270bb1556d347c89ef8a0e3007687cd;uid=wdiwtcozisthkiwp;pwd=HB6j7L7kZuf4</property>
         <property name="current_session_context_class">web</property>
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>

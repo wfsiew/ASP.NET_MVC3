@@ -10,3 +10,4 @@ F:\vs_Projects\mvcweb\mvcwebtest\bin\Debug\Ninject.dll
 F:\vs_Projects\mvcweb\mvcwebtest\bin\Debug\mvcweb.pdb
 F:\vs_Projects\mvcweb\mvcwebtest\obj\Debug\mvcwebtest.dll
 F:\vs_Projects\mvcweb\mvcwebtest\obj\Debug\mvcwebtest.pdb
+F:\vs_Projects\mvcweb\mvcwebtest\obj\Debug\mvcwebtest.csprojResolveAssemblyReference.cache

@@ -39,7 +39,7 @@ namespace mvcwebtest.Facts
         private ICarRepository r;
 
         public CarRepositoryFacts()
-            : base("mvcweb", "localhost", 3307, "testdb", "root", "root")
+            : base("mvcweb", "8270bb15-56d3-47c8-9ef8-a0e3007687cd.mysql.sequelizer.com", 3306, "testdb", "wdiwtcozisthkiwp ", "HB6j7L7kZuf4sBvr7vpP3WkUbVLEVfVKnHkvsC3pjiby7MK2uCrdenQUqjij8zxU")
         {
             r = new CarRepository();
             NHibernateUtils.SessionFactory = SessionFactory;
