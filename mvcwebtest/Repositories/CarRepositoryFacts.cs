@@ -11,211 +11,211 @@ using mvcweb.Repositories;
 
 namespace mvcwebtest.Facts
 {
-    public class TestFixture : IDisposable
-    {
-        public ISessionFactory SessionFactory { get; set; }
+    //public class TestFixture : IDisposable
+    //{
+    //    public ISessionFactory SessionFactory { get; set; }
 
-        public TestFixture()
-        {
-        }
+    //    public TestFixture()
+    //    {
+    //    }
 
-        public void Init(ISessionFactory s)
-        {
-            SessionFactory = s;
-            ISession session = SessionFactory.OpenSession();
-            CurrentSessionContext.Bind(session);
-        }
+    //    public void Init(ISessionFactory s)
+    //    {
+    //        SessionFactory = s;
+    //        ISession session = SessionFactory.OpenSession();
+    //        CurrentSessionContext.Bind(session);
+    //    }
 
-        public void Dispose()
-        {
-            ISession session = CurrentSessionContext.Unbind(SessionFactory);
-            session.Close();
-        }
-    }
+    //    public void Dispose()
+    //    {
+    //        ISession session = CurrentSessionContext.Unbind(SessionFactory);
+    //        session.Close();
+    //    }
+    //}
 
-    public class CarRepositoryFacts : NHibernateFixtureBase, IUseFixture<TestFixture>, IDisposable
-    {
-        private TestFixture o;
-        private ICarRepository r;
+    //public class CarRepositoryFacts : NHibernateFixtureBase, IUseFixture<TestFixture>, IDisposable
+    //{
+    //    private TestFixture o;
+    //    private ICarRepository r;
 
-        public CarRepositoryFacts()
-            : base("mvcweb", "0222f8b2-6308-478d-ae87-a11200cef3be.mysql.sequelizer.com", 3306, "db0222f8b26308478dae87a11200cef3be", "lycddawsjcjbpvvs ", "hyjz8wRVMfGqnrxvR3EfbiWjDaXkA72Lh26fuLrfpsCbALFfQbtQuTR8J857FFtP")
-        {
-            r = new CarRepository();
-            NHibernateUtils.SessionFactory = SessionFactory;
-            PrepareData();
-        }
+    //    public CarRepositoryFacts()
+    //        : base("mvcweb", "0222f8b2-6308-478d-ae87-a11200cef3be.mysql.sequelizer.com", 3306, "db0222f8b26308478dae87a11200cef3be", "lycddawsjcjbpvvs ", "hyjz8wRVMfGqnrxvR3EfbiWjDaXkA72Lh26fuLrfpsCbALFfQbtQuTR8J857FFtP")
+    //    {
+    //        r = new CarRepository();
+    //        NHibernateUtils.SessionFactory = SessionFactory;
+    //        PrepareData();
+    //    }
 
-        public void SetFixture(TestFixture x)
-        {
-            x.Init(SessionFactory);
-            o = x;
-        }
+    //    public void SetFixture(TestFixture x)
+    //    {
+    //        x.Init(SessionFactory);
+    //        o = x;
+    //    }
 
-        private void PrepareData()
-        {
-            using (ISession s = SessionFactory.OpenSession())
-            {
-                using (ITransaction tx = s.BeginTransaction())
-                {
-                    List<Car> l = Builder<Car>.CreateListOfSize(100).Build().ToList();
-                    foreach (Car c in l)
-                    {
-                        s.Save(c);
-                    }
+    //    private void PrepareData()
+    //    {
+    //        using (ISession s = SessionFactory.OpenSession())
+    //        {
+    //            using (ITransaction tx = s.BeginTransaction())
+    //            {
+    //                List<Car> l = Builder<Car>.CreateListOfSize(100).Build().ToList();
+    //                foreach (Car c in l)
+    //                {
+    //                    s.Save(c);
+    //                }
 
-                    tx.Commit();
-                }
-            }
-        }
+    //                tx.Commit();
+    //            }
+    //        }
+    //    }
 
-        [Fact]
-        public void GetAll()
-        {
-            Dictionary<string, object> d = r.GetAll(1, 0);
+    //    [Fact]
+    //    public void GetAll()
+    //    {
+    //        Dictionary<string, object> d = r.GetAll(1, 0);
 
-            Assert.IsType(typeof(string), d["item_msg"]);
-            Assert.IsType(typeof(int), d["hasnext"]);
-            Assert.IsType(typeof(int), d["hasprev"]);
-            Assert.IsType(typeof(int), d["nextpage"]);
-            Assert.IsType(typeof(int), d["prevpage"]);
-            Assert.IsType(typeof(List<Car>), d["list"]);
+    //        Assert.IsType(typeof(string), d["item_msg"]);
+    //        Assert.IsType(typeof(int), d["hasnext"]);
+    //        Assert.IsType(typeof(int), d["hasprev"]);
+    //        Assert.IsType(typeof(int), d["nextpage"]);
+    //        Assert.IsType(typeof(int), d["prevpage"]);
+    //        Assert.IsType(typeof(List<Car>), d["list"]);
 
-            Assert.Equal("1 to 100 of 100", d["item_msg"]);
-            Assert.Equal(0, d["hasnext"]);
-            Assert.Equal(0, d["hasprev"]);
-            Assert.Equal(2, d["nextpage"]);
-            Assert.Equal(0, d["prevpage"]);
-            Assert.Equal(100, ((IList<Car>)d["list"]).Count);
+    //        Assert.Equal("1 to 100 of 100", d["item_msg"]);
+    //        Assert.Equal(0, d["hasnext"]);
+    //        Assert.Equal(0, d["hasprev"]);
+    //        Assert.Equal(2, d["nextpage"]);
+    //        Assert.Equal(0, d["prevpage"]);
+    //        Assert.Equal(100, ((IList<Car>)d["list"]).Count);
 
-            d = r.GetAll(2, 10);
+    //        d = r.GetAll(2, 10);
 
-            Assert.Equal("11 to 20 of 100", d["item_msg"]);
-            Assert.Equal(1, d["hasnext"]);
-            Assert.Equal(1, d["hasprev"]);
-            Assert.Equal(3, d["nextpage"]);
-            Assert.Equal(1, d["prevpage"]);
-            Assert.Equal(10, ((IList<Car>)d["list"]).Count);
-        }
+    //        Assert.Equal("11 to 20 of 100", d["item_msg"]);
+    //        Assert.Equal(1, d["hasnext"]);
+    //        Assert.Equal(1, d["hasprev"]);
+    //        Assert.Equal(3, d["nextpage"]);
+    //        Assert.Equal(1, d["prevpage"]);
+    //        Assert.Equal(10, ((IList<Car>)d["list"]).Count);
+    //    }
 
-        [Fact]
-        public void GetFilterBy()
-        {
-            Dictionary<string, object> d = r.GetFilterBy(0, "10", 1, 0);
+    //    [Fact]
+    //    public void GetFilterBy()
+    //    {
+    //        Dictionary<string, object> d = r.GetFilterBy(0, "10", 1, 0);
 
-            Assert.IsType(typeof(string), d["item_msg"]);
-            Assert.IsType(typeof(int), d["hasnext"]);
-            Assert.IsType(typeof(int), d["hasprev"]);
-            Assert.IsType(typeof(int), d["nextpage"]);
-            Assert.IsType(typeof(int), d["prevpage"]);
-            Assert.IsType(typeof(List<Car>), d["list"]);
+    //        Assert.IsType(typeof(string), d["item_msg"]);
+    //        Assert.IsType(typeof(int), d["hasnext"]);
+    //        Assert.IsType(typeof(int), d["hasprev"]);
+    //        Assert.IsType(typeof(int), d["nextpage"]);
+    //        Assert.IsType(typeof(int), d["prevpage"]);
+    //        Assert.IsType(typeof(List<Car>), d["list"]);
 
-            Assert.Equal("1 to 2 of 2", d["item_msg"]);
-            Assert.Equal(0, d["hasnext"]);
-            Assert.Equal(0, d["hasprev"]);
-            Assert.Equal(2, d["nextpage"]);
-            Assert.Equal(0, d["prevpage"]);
-            Assert.Equal(2, ((IList<Car>)d["list"]).Count);
+    //        Assert.Equal("1 to 2 of 2", d["item_msg"]);
+    //        Assert.Equal(0, d["hasnext"]);
+    //        Assert.Equal(0, d["hasprev"]);
+    //        Assert.Equal(2, d["nextpage"]);
+    //        Assert.Equal(0, d["prevpage"]);
+    //        Assert.Equal(2, ((IList<Car>)d["list"]).Count);
 
-            d = r.GetFilterBy(0, "1", 2, 10);
+    //        d = r.GetFilterBy(0, "1", 2, 10);
 
-            Assert.Equal("11 to 20 of 20", d["item_msg"]);
-            Assert.Equal(0, d["hasnext"]);
-            Assert.Equal(1, d["hasprev"]);
-            Assert.Equal(3, d["nextpage"]);
-            Assert.Equal(1, d["prevpage"]);
-            Assert.Equal(10, ((IList<Car>)d["list"]).Count);
-        }
+    //        Assert.Equal("11 to 20 of 20", d["item_msg"]);
+    //        Assert.Equal(0, d["hasnext"]);
+    //        Assert.Equal(1, d["hasprev"]);
+    //        Assert.Equal(3, d["nextpage"]);
+    //        Assert.Equal(1, d["prevpage"]);
+    //        Assert.Equal(10, ((IList<Car>)d["list"]).Count);
+    //    }
 
-        [Fact]
-        public void Get()
-        {
-			Car c = r.Get(100);
-            Assert.NotNull(c);
-            Assert.Equal("Make100", c.Make);
-            Assert.Equal("Model100", c.Model);
-        }
+    //    [Fact]
+    //    public void Get()
+    //    {
+    //        Car c = r.Get(100);
+    //        Assert.NotNull(c);
+    //        Assert.Equal("Make100", c.Make);
+    //        Assert.Equal("Model100", c.Model);
+    //    }
 
-        [Fact]
-        public void Add()
-        {
-            Car c = Builder<Car>.CreateNew().Build();
-            r.Add(c);
-            Assert.Equal(101, c.ID);
-            Assert.Equal("Make1", c.Make);
-            Assert.Equal("Model1", c.Model);
-            Assert.Equal("Colour1", c.Colour);
-        }
+    //    [Fact]
+    //    public void Add()
+    //    {
+    //        Car c = Builder<Car>.CreateNew().Build();
+    //        r.Add(c);
+    //        Assert.Equal(101, c.ID);
+    //        Assert.Equal("Make1", c.Make);
+    //        Assert.Equal("Model1", c.Model);
+    //        Assert.Equal("Colour1", c.Colour);
+    //    }
 
-        [Fact]
-        public void Delete()
-        {
-			IList<Car> l = Builder<Car>.CreateListOfSize(5).Build();
+    //    [Fact]
+    //    public void Delete()
+    //    {
+    //        IList<Car> l = Builder<Car>.CreateListOfSize(5).Build();
 
-            using (ISession s = SessionFactory.OpenSession())
-            {
-                int count = s.QueryOver<Car>().ToRowCountQuery().FutureValue<int>().Value;
-                Assert.Equal(100, count);
+    //        using (ISession s = SessionFactory.OpenSession())
+    //        {
+    //            int count = s.QueryOver<Car>().ToRowCountQuery().FutureValue<int>().Value;
+    //            Assert.Equal(100, count);
 
-                using (ITransaction tx = s.BeginTransaction())
-                {
-                    foreach (Car x in l)
-                    {
-                        s.Save(x);
-                    }
+    //            using (ITransaction tx = s.BeginTransaction())
+    //            {
+    //                foreach (Car x in l)
+    //                {
+    //                    s.Save(x);
+    //                }
 
-                    tx.Commit();
+    //                tx.Commit();
 
-                    count = s.QueryOver<Car>().ToRowCountQuery().FutureValue<int>().Value;
-                    Assert.Equal(105, count);
-                }
-            }
+    //                count = s.QueryOver<Car>().ToRowCountQuery().FutureValue<int>().Value;
+    //                Assert.Equal(105, count);
+    //            }
+    //        }
 
-            r.Delete(l[3].ID);
-            r.Delete(l[4].ID);
+    //        r.Delete(l[3].ID);
+    //        r.Delete(l[4].ID);
 
-            using (ISession s = SessionFactory.OpenSession())
-            {
-                int count = s.QueryOver<Car>().ToRowCountQuery().FutureValue<int>().Value;
-                Assert.Equal(103, count);
-            }
-        }
+    //        using (ISession s = SessionFactory.OpenSession())
+    //        {
+    //            int count = s.QueryOver<Car>().ToRowCountQuery().FutureValue<int>().Value;
+    //            Assert.Equal(103, count);
+    //        }
+    //    }
 
-        [Fact]
-        public void Edit()
-        {
-			Car c = r.Get(99);
-            Assert.NotNull(c);
+    //    [Fact]
+    //    public void Edit()
+    //    {
+    //        Car c = r.Get(99);
+    //        Assert.NotNull(c);
 
-            c.Colour = "Brown";
-            c.Doors = 4;
-            c.Make = "Honda";
-            c.Model = "City";
-            c.Price = 109000;
-            c.Year = 2012;
+    //        c.Colour = "Brown";
+    //        c.Doors = 4;
+    //        c.Make = "Honda";
+    //        c.Model = "City";
+    //        c.Price = 109000;
+    //        c.Year = 2012;
 
-            r.Edit(c);
+    //        r.Edit(c);
 
-            Car a = r.Get(99);
-            Assert.NotNull(a);
-            Assert.Equal("Brown", a.Colour);
-            Assert.Equal(4, a.Doors);
-            Assert.Equal("Honda", a.Make);
-            Assert.Equal("City", a.Model);
-            Assert.Equal(109000, a.Price);
-            Assert.Equal(2012, a.Year);
-        }
+    //        Car a = r.Get(99);
+    //        Assert.NotNull(a);
+    //        Assert.Equal("Brown", a.Colour);
+    //        Assert.Equal(4, a.Doors);
+    //        Assert.Equal("Honda", a.Make);
+    //        Assert.Equal("City", a.Model);
+    //        Assert.Equal(109000, a.Price);
+    //        Assert.Equal(2012, a.Year);
+    //    }
 
-        [Fact]
-        public void GetItemMessage()
-        {
-			string s = r.GetItemMessage(0, "10", 1, 20);
-            Assert.Equal(s, "1 to 2 of 2");
-        }
+    //    [Fact]
+    //    public void GetItemMessage()
+    //    {
+    //        string s = r.GetItemMessage(0, "10", 1, 20);
+    //        Assert.Equal(s, "1 to 2 of 2");
+    //    }
 
-        public override void Dispose()
-        {
-            base.Dispose();
-        }
-    }
+    //    public override void Dispose()
+    //    {
+    //        base.Dispose();
+    //    }
+    //}
 }

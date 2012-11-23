@@ -7,3 +7,4 @@ F:\vs_Projects\mvcweb\mvcweb\bin\FizzWare.NBuilder.dll
 F:\vs_Projects\mvcweb\mvcweb\bin\Iesi.Collections.dll
 F:\vs_Projects\mvcweb\mvcweb\bin\NHibernate.dll
 F:\vs_Projects\mvcweb\mvcweb\bin\Ninject.dll
+F:\vs_Projects\mvcweb\mvcweb\obj\Release\mvcweb.csprojResolveAssemblyReference.cache
