@@ -3,3 +3,4 @@ F:\vs_Projects\mvcweb\mvcweb\bin\mvcweb.dll
 F:\vs_Projects\mvcweb\mvcweb\bin\mvcweb.pdb
 F:\vs_Projects\mvcweb\mvcweb\obj\Debug\mvcweb.dll
 F:\vs_Projects\mvcweb\mvcweb\obj\Debug\mvcweb.pdb
+F:\vs_Projects\mvcweb\mvcweb\obj\Debug\mvcweb.csprojResolveAssemblyReference.cache
