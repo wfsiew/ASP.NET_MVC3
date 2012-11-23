@@ -16,10 +16,9 @@ namespace mvcwebtest.Facts
         protected ISessionFactory SessionFactory { get; set; }
         private SchemaExport SchemaExport { get; set; }
 
-        protected NHibernateFixtureBase(string assemblyWithMappings, string server, int port, string db,
-            string username, string pwd)
+        protected NHibernateFixtureBase(string assemblyWithMappings)
         {
-            CreateSessionFactory(assemblyWithMappings, BuildConnectionString(server, port, db, username, pwd));
+            CreateSessionFactory(assemblyWithMappings, SQLiteConnectionString());
         }
 
         private void CreateSessionFactory(string assemblyName, string connStr)
@@ -29,8 +28,8 @@ namespace mvcwebtest.Facts
             cfg.DataBaseIntegration(o =>
                 {
                     o.ConnectionProvider<DriverConnectionProvider>();
-                    o.Dialect<MySQLDialect>();
-                    o.Driver<MySqlDataDriver>();
+                    o.Dialect<SQLiteDialect>();
+                    o.Driver<SQLite20Driver>();
                     o.ConnectionString = connStr;
                     o.BatchSize = 100;
                 });
@@ -42,10 +41,9 @@ namespace mvcwebtest.Facts
             SchemaExport.Create(false, true);
         }
 
-        private static string BuildConnectionString(string server, int port, string db, string username, string pwd)
+        private static string SQLiteConnectionString()
         {
-            return string.Format("Server={0};Port={1};Database={2};Uid={3};Pwd={4};",
-                server, port, db, username, pwd);
+            return "Data Source=test.db;Version=3";
         }
 
         public virtual void Dispose()

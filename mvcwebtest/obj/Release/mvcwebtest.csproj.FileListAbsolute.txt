@@ -11,3 +11,7 @@ F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\mvcweb.pdb
 F:\vs_Projects\mvcweb\mvcwebtest\obj\Release\mvcwebtest.csprojResolveAssemblyReference.cache
 F:\vs_Projects\mvcweb\mvcwebtest\obj\Release\mvcwebtest.dll
 F:\vs_Projects\mvcweb\mvcwebtest\obj\Release\mvcwebtest.pdb
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\x64\SQLite.Interop.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\x86\SQLite.Interop.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\System.Data.SQLite.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Release\System.Data.SQLite.Linq.dll
