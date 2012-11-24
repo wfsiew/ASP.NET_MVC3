@@ -112,6 +112,7 @@
     <Compile Include="Repositories\ICarRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\favicon.ico" />
     <Content Include="Content\style.css" />
     <Content Include="Content\tpl\form_error.html" />
     <Content Include="Content\tpl\label_error.html" />

@@ -10,4 +10,7 @@ F:\vs_Projects\mvcweb\mvcwebtest\bin\Debug\Ninject.dll
 F:\vs_Projects\mvcweb\mvcwebtest\bin\Debug\mvcweb.pdb
 F:\vs_Projects\mvcweb\mvcwebtest\obj\Debug\mvcwebtest.dll
 F:\vs_Projects\mvcweb\mvcwebtest\obj\Debug\mvcwebtest.pdb
-F:\vs_Projects\mvcweb\mvcwebtest\obj\Debug\mvcwebtest.csprojResolveAssemblyReference.cache
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Debug\x64\SQLite.Interop.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Debug\x86\SQLite.Interop.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Debug\System.Data.SQLite.dll
+F:\vs_Projects\mvcweb\mvcwebtest\bin\Debug\System.Data.SQLite.Linq.dll
