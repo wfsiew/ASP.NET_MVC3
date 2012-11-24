@@ -11,8 +11,7 @@ var car = (function () {
 				function () {
 				    $("#left_box").css('width', '300px');
 				    $(".save_button.save").click(func_save);
-				    $(".save_button.cancel,.form_title div.close").click(
-							utils.cancel_form);
+				    $(".save_button.cancel,.form_title div.close").click(utils.cancel_form);
 				    utils.bind_hover($(".save_button,.form_title div.close"));
 				    $("#left_box").show();
 				});
@@ -35,8 +34,7 @@ var car = (function () {
 				    $(".save_button.save").click(function () {
 				        return func_update(arg);
 				    });
-				    $(".save_button.cancel,.form_title div.close").click(
-							utils.cancel_form);
+				    $(".save_button.cancel,.form_title div.close").click(utils.cancel_form);
 				    utils.bind_hover($(".save_button,.form_title div.close"));
 				    $("#left_box").show();
 				});
@@ -170,8 +168,8 @@ var car = (function () {
     }
 
     return {
-        init: init
+        init : init
     };
-} ());
+}());
 
 $(document).ready(car.init);
